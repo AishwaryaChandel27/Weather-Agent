@@ -59,7 +59,7 @@ A modern, responsive chat interface that connects users to an AI-powered weather
 
 1. **Clone the repository**
    ```bash
-   git clone <repository-url>
+   git clone https://github.com/AishwaryaChandel27/Weather-Agent
    cd weather-agent-chat
    ```
 
