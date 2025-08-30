@@ -1,0 +1,25 @@
+{
+  "name": "Weather Agent Chat",
+  "short_name": "WeatherChat",
+  "description": "AI-powered weather assistant with real-time chat interface",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0f172a",
+  "theme_color": "#0ea5e9",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='40' fill='%230ea5e9'/%3E%3Cpath d='M30 45h40M35 55h30M25 65h50' stroke='white' stroke-width='3' stroke-linecap='round'/%3E%3C/svg%3E",
+      "sizes": "192x192",
+      "type": "image/svg+xml"
+    },
+    {
+      "src": "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='40' fill='%230ea5e9'/%3E%3Cpath d='M30 45h40M35 55h30M25 65h50' stroke='white' stroke-width='3' stroke-linecap='round'/%3E%3C/svg%3E",
+      "sizes": "512x512",
+      "type": "image/svg+xml"
+    }
+  ],
+  "categories": ["weather", "productivity", "utilities"],
+  "lang": "en-US",
+  "prefer_related_applications": false
+}

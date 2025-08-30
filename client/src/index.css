@@ -1,0 +1,222 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --radius: 0.5rem;
+  
+  /* Light mode colors */
+  --background: hsl(210, 40%, 96%);
+  --foreground: hsl(210, 40%, 8%);
+  --card: hsl(210, 40%, 100%);
+  --card-foreground: hsl(210, 40%, 15%);
+  --popover: hsl(210, 40%, 100%);
+  --popover-foreground: hsl(210, 40%, 8%);
+  --primary: hsl(199, 89%, 48%);
+  --primary-foreground: hsl(210, 40%, 98%);
+  --secondary: hsl(210, 40%, 90%);
+  --secondary-foreground: hsl(210, 40%, 20%);
+  --muted: hsl(210, 40%, 88%);
+  --muted-foreground: hsl(210, 40%, 45%);
+  --accent: hsl(45, 93%, 60%);
+  --accent-foreground: hsl(210, 40%, 8%);
+  --destructive: hsl(0, 84%, 60%);
+  --destructive-foreground: hsl(210, 40%, 98%);
+  --border: hsl(210, 40%, 85%);
+  --input: hsl(210, 40%, 95%);
+  --ring: hsl(199, 89%, 48%);
+  --chart-1: hsl(199, 89%, 48%);
+  --chart-2: hsl(159, 100%, 36%);
+  --chart-3: hsl(42, 93%, 56%);
+  --chart-4: hsl(147, 79%, 42%);
+  --chart-5: hsl(341, 75%, 51%);
+  --sidebar: hsl(210, 40%, 100%);
+  --sidebar-foreground: hsl(210, 40%, 15%);
+  --sidebar-primary: hsl(199, 89%, 48%);
+  --sidebar-primary-foreground: hsl(210, 40%, 98%);
+  --sidebar-accent: hsl(210, 40%, 90%);
+  --sidebar-accent-foreground: hsl(199, 89%, 48%);
+  --sidebar-border: hsl(210, 40%, 85%);
+  --sidebar-ring: hsl(199, 89%, 48%);
+  --font-sans: Inter, system-ui, sans-serif;
+  --font-serif: Georgia, serif;
+  --font-mono: Menlo, monospace;
+}
+
+.dark {
+  --background: hsl(224, 71%, 4%);
+  --foreground: hsl(210, 40%, 98%);
+  --card: hsl(224, 71%, 8%);
+  --card-foreground: hsl(210, 40%, 95%);
+  --popover: hsl(224, 71%, 8%);
+  --popover-foreground: hsl(210, 40%, 98%);
+  --primary: hsl(199, 89%, 48%);
+  --primary-foreground: hsl(210, 40%, 98%);
+  --secondary: hsl(215, 32%, 18%);
+  --secondary-foreground: hsl(210, 40%, 80%);
+  --muted: hsl(215, 32%, 15%);
+  --muted-foreground: hsl(215, 20%, 65%);
+  --accent: hsl(45, 93%, 60%);
+  --accent-foreground: hsl(210, 40%, 8%);
+  --destructive: hsl(0, 84%, 60%);
+  --destructive-foreground: hsl(210, 40%, 98%);
+  --border: hsl(215, 32%, 18%);
+  --input: hsl(215, 32%, 15%);
+  --ring: hsl(199, 89%, 48%);
+  --chart-1: hsl(199, 89%, 48%);
+  --chart-2: hsl(159, 100%, 36%);
+  --chart-3: hsl(42, 93%, 56%);
+  --chart-4: hsl(147, 79%, 42%);
+  --chart-5: hsl(341, 75%, 51%);
+  --sidebar: hsl(224, 71%, 8%);
+  --sidebar-foreground: hsl(210, 40%, 95%);
+  --sidebar-primary: hsl(199, 89%, 48%);
+  --sidebar-primary-foreground: hsl(210, 40%, 98%);
+  --sidebar-accent: hsl(215, 32%, 18%);
+  --sidebar-accent-foreground: hsl(199, 89%, 48%);
+  --sidebar-border: hsl(215, 32%, 18%);
+  --sidebar-ring: hsl(199, 89%, 48%);
+  --font-sans: Inter, system-ui, sans-serif;
+  --font-serif: Georgia, serif;
+  --font-mono: Menlo, monospace;
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply font-sans antialiased bg-background text-foreground;
+    scroll-behavior: smooth;
+  }
+
+  html {
+    transition: color-scheme 0.3s ease;
+  }
+}
+
+@layer components {
+  .glass {
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    background: rgba(255, 255, 255, 0.1);
+  }
+
+  .dark .glass {
+    background: rgba(0, 0, 0, 0.2);
+  }
+
+  .weather-particle {
+    position: absolute;
+    border-radius: 50%;
+    animation: float 6s ease-in-out infinite;
+  }
+
+  .weather-particle:nth-child(odd) {
+    animation-delay: -2s;
+  }
+
+  .weather-particle:nth-child(even) {
+    animation-delay: -4s;
+  }
+
+  .message-bubble {
+    animation: slide-up 0.3s ease-out;
+  }
+
+  .typing-indicator {
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background-color: currentColor;
+    animation: typing 1.4s infinite ease-in-out;
+  }
+
+  .typing-indicator:nth-child(1) { animation-delay: -0.32s; }
+  .typing-indicator:nth-child(2) { animation-delay: -0.16s; }
+
+  .weather-map {
+    background: radial-gradient(circle at 30% 30%, rgba(59, 130, 246, 0.3), rgba(16, 185, 129, 0.2));
+  }
+
+  .typewriter {
+    overflow: hidden;
+    white-space: nowrap;
+    border-right: 2px solid currentColor;
+    animation: typewriter 0.5s steps(40, end), blink-caret 1s step-end infinite;
+  }
+}
+
+@layer utilities {
+  .scroll-smooth {
+    scroll-behavior: smooth;
+  }
+
+  .text-shadow {
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+  }
+
+  .dark .text-shadow {
+    text-shadow: 0 1px 2px rgba(255, 255, 255, 0.1);
+  }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+}
+
+@keyframes typewriter {
+  from { width: 0; }
+  to { width: 100%; }
+}
+
+@keyframes blink-caret {
+  from, to { border-color: transparent; }
+  50% { border-color: currentColor; }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideUp {
+  from { transform: translateY(20px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes typing {
+  0%, 80%, 100% { 
+    opacity: 0.2;
+    transform: scale(0.8);
+  }
+  40% { 
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Custom animations */
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+.animate-typewriter {
+  animation: typewriter 0.5s steps(40, end);
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.3s ease-out;
+}
+
+.animate-slide-up {
+  animation: slideUp 0.3s ease-out;
+}
+
+.animate-pulse-slow {
+  animation: pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
